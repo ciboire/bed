@@ -281,10 +281,57 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="info_icon.jpg" id="w2B-6p-l7z">
-                                <rect key="frame" x="0.0" y="-35" width="320" height="416"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="16" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Ftd-LE-Er5">
+                                <rect key="frame" x="15" y="0.0" width="291" height="316"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <attributedString key="attributedText">
+                                    <fragment>
+                                        <string key="content">This calculator uses the Linear-Quadratic formula, whereby isoeffective fractionation schemes have the same Biological Effective Dose (BED):
+</string>
+                                        <attributes>
+                                            <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <font key="NSFont" size="17" name="Helvetica"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content" base64-UTF8="YES">
+Cg
+</string>
+                                        <attributes>
+                                            <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <font key="NSFont" size="17" name="Helvetica"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="BED">
+                                        <attributes>
+                                            <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <font key="NSFont" size="17" name="Helvetica"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="α/β">
+                                        <attributes>
+                                            <font key="NSFont" size="10" name="Helvetica"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content"> = nd (1 + (d / (α/β)))
+
+Here, n is the number of fractions, d is the dose / fraction, and (α/β) is the tissue-specific parameter in the LQ formalism.
+</string>
+                                        <attributes>
+                                            <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <font key="NSFont" size="17" name="Helvetica"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -295,9 +342,6 @@
             <point key="canvasLocation" x="665" y="422"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="info_icon.jpg" width="168" height="168"/>
-    </resources>
     <classes>
         <class className="CalculationCell" superclassName="UITableViewCell">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CalculationCell.h"/>
