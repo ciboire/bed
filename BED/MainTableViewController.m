@@ -317,7 +317,6 @@
         // Close the context, we're done with the PDF now.
         CGPDFContextClose(pdfContext);
 
-        /*
         // Now fire up the mail, with the PDF as a built-in attachment.
         MFMailComposeViewController* controller = [[MFMailComposeViewController alloc] init];
         controller.mailComposeDelegate = self;
@@ -325,10 +324,12 @@
         [controller setMessageBody:@"" isHTML:NO]; 
         [controller addAttachmentData:pdfData mimeType:@"application/pdf" fileName:@"BED_Calculation_History.pdf"];
         if (controller) [self presentModalViewController:controller animated:YES];
-         */
+        
+        /*
         NSString* applicationDocumentsDir = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
         NSString* dataFilename = [applicationDocumentsDir stringByAppendingPathComponent:@"email.pdf"];
         [[NSKeyedArchiver archivedDataWithRootObject:pdfData] writeToFile:dataFilename atomically:YES];
+         */
 
     }
     else
