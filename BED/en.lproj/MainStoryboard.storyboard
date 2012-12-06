@@ -342,40 +342,6 @@ Here, n is the number of fractions, d is the dose / fraction, and (α/β) is the
             <point key="canvasLocation" x="665" y="422"/>
         </scene>
     </scenes>
-    <classes>
-        <class className="CalculationCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CalculationCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="BEDButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="BEDCalculationLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="cGy1TextField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="cGy2Label" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="fx1TextField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="fx2TextField" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="HistoryCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HistoryCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="BEDCalculationLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="BEDRatioLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="cGy1Label" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="cGy2Label" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="fx1Label" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="fx2Label" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="MainTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MainTableViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="BEDClicked:"/>
-                <relationship kind="action" name="save:"/>
-                <relationship kind="action" name="shareClicked:"/>
-                <relationship kind="action" name="trashClicked:"/>
-                <relationship kind="outlet" name="addButton" candidateClass="UIBarButtonItem"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
