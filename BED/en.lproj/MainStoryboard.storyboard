@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.0" toolsVersion="1938" systemVersion="11G63" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="Y3R-5J-Sg5">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="Y3R-5J-Sg5">
     <dependencies>
-        <development defaultVersion="4200" identifier="xcode"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="933"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
     </dependencies>
     <scenes>
+        <!--Navigation Controller-->
         <scene sceneID="lTc-Tg-bIh">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="kjG-65-7Wf" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController definesPresentationContext="YES" toolbarHidden="NO" id="Y3R-5J-Sg5" sceneMemberID="viewController">
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics" barStyle="blackTranslucent"/>
                     <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="Neg-W6-aWz">
@@ -22,12 +21,13 @@
                         <segue destination="zFH-Ue-A5G" kind="relationship" relationship="rootViewController" id="lox-2f-A25"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kjG-65-7Wf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-273" y="29"/>
         </scene>
+        <!--Main Table View Controller - BED Calculator-->
         <scene sceneID="gTJ-dt-hJt">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="y1I-ja-fRm" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="zFH-Ue-A5G" customClass="MainTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" indicatorStyle="white" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="GZ9-hg-GsI">
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
@@ -269,12 +269,13 @@
                         <outlet property="addButton" destination="YIt-8T-S2d" id="SKi-NQ-3wB"/>
                     </connections>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="y1I-ja-fRm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="227" y="39"/>
         </scene>
+        <!--View Controller-->
         <scene sceneID="In6-v0-Mrm">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="gM8-Zr-9fq" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="PrL-9S-ZMJ" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qd2-lc-YTd">
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
@@ -289,6 +290,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="02m-cH-qS6"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gM8-Zr-9fq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="665" y="422"/>
         </scene>
