@@ -59,7 +59,7 @@
     if (cgy1 > 0 && fx1 > 0 && fx2 > 0 && self.alphabeta > 0.0)
     {
         float bedCalculation = (cgy1/100.0)*(1.0+(((cgy1/100.0)/fx1)/self.alphabeta));
-        float cgy2Calculation = ((-fx2+sqrt((fx2*fx2)+(((4.0*fx2)/self.alphabeta)*bedCalculation)))/((2.0*fx2)/self.alphabeta))*100.0;
+        float cgy2Calculation = ((-fx2+sqrt((fx2*fx2)+(((4.0*fx2)/self.alphabeta)*bedCalculation)))/((2.0*fx2)/self.alphabeta))*100.0*fx2;
         
         self.BEDCalculationLabel.text = [NSString stringWithFormat:@"%.0f", bedCalculation];
         self.cGy2Label.text = [NSString stringWithFormat:@"%.0f", cgy2Calculation];
