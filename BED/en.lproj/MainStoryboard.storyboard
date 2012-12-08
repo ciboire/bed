@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="11G63" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="Y3R-5J-Sg5">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="Y3R-5J-Sg5">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
     </dependencies>
@@ -100,7 +100,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="center" text="BED" textAlignment="center" lineBreakMode="clip" minimumFontSize="10" id="5LG-Gn-4cE">
-                                            <rect key="frame" x="78" y="11" width="42" height="21"/>
+                                            <rect key="frame" x="73" y="11" width="42" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <color key="textColor" red="0.89162279209999995" green="0.28982604210000001" blue="0.1093795286" alpha="1" colorSpace="calibratedRGB"/>
@@ -148,35 +148,36 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="bottom" text="BED_3" lineBreakMode="clip" minimumFontSize="10" id="wF6-dq-Exi">
-                                            <rect key="frame" x="11" y="15" width="51" height="21"/>
+                                            <rect key="frame" x="11" y="11" width="51" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="cGy" textAlignment="center" lineBreakMode="clip" minimumFontSize="10" id="rer-v4-KO4">
-                                            <rect key="frame" x="130" y="9" width="34" height="21"/>
+                                            <rect key="frame" x="130" y="11" width="34" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="fx" textAlignment="center" lineBreakMode="clip" minimumFontSize="10" id="ION-53-3ap">
-                                            <rect key="frame" x="184" y="9" width="30" height="21"/>
+                                            <rect key="frame" x="184" y="11" width="30" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="cGy" textAlignment="center" lineBreakMode="clip" minimumFontSize="10" id="gD5-u5-HRQ">
-                                            <rect key="frame" x="230" y="9" width="40" height="21"/>
+                                            <rect key="frame" x="230" y="11" width="40" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <color key="textColor" red="0.89162279211956519" green="0.28982604212841162" blue="0.10937952862017949" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="fx" textAlignment="center" lineBreakMode="clip" minimumFontSize="10" id="3EC-eL-8yV">
-                                            <rect key="frame" x="285" y="9" width="28" height="21"/>
+                                            <rect key="frame" x="285" y="11" width="28" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -190,28 +191,30 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="BED" textAlignment="center" lineBreakMode="clip" minimumFontSize="10" id="nVS-eF-Iav">
-                                            <rect key="frame" x="78" y="11" width="46" height="21"/>
+                                            <rect key="frame" x="73" y="11" width="46" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <color key="textColor" red="0.89162279209999995" green="0.28982604210000001" blue="0.1093795286" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="=" lineBreakMode="tailTruncation" minimumFontSize="10" id="Nuc-eb-kHz">
-                                            <rect key="frame" x="64" y="9" width="16" height="21"/>
+                                            <rect key="frame" x="66" y="9" width="16" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="/" lineBreakMode="tailTruncation" minimumFontSize="10" id="jSA-In-3Zb">
-                                            <rect key="frame" x="170" y="11" width="12" height="21"/>
+                                            <rect key="frame" x="174" y="11" width="12" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="/" lineBreakMode="tailTruncation" minimumFontSize="10" id="1Ge-h3-q3k">
-                                            <rect key="frame" x="272" y="9" width="12" height="21"/>
+                                            <rect key="frame" x="273" y="11" width="12" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
