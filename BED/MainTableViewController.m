@@ -440,7 +440,7 @@
     int n = 1;
     switch(component)
     {
-        case 0: n = 16; break;
+        case 0: n = 50; break;
         case 1: n = 1; break;
         case 2: n = 10; break;
     }
