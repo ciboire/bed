@@ -67,20 +67,21 @@
     NSLog(@"UPDATE CALCULATION with A/B=%f", self.alphabeta);
     
     // Check for valid integer inputs.  Blank out any invalid inputs we find.
+    // Note that FX2 is allowed to be blank.
     NSScanner* scanner = [NSScanner scannerWithString:self.cGy1TextField.text];
-    bool validInt = [scanner scanInt:nil];
-    if (!validInt) self.cGy1TextField.text = @"";
-    bool validInput = validInt;
+    int val = 0;
+    bool validInt = [scanner scanInt:&val];
+    if (!validInt || val <= 0) self.cGy1TextField.text = @"";
+    bool validInput = validInt && val > 0;
     
     scanner = [NSScanner scannerWithString:self.fx1TextField.text];
-    validInt = [scanner scanInt:nil];
-    if (!validInt) self.fx1TextField.text = @"";
-    validInput &= validInt;
+    validInt = [scanner scanInt:&val];
+    if (!validInt || val <= 0) self.fx1TextField.text = @"";
+    validInput &= validInt && val > 0;
 
     scanner = [NSScanner scannerWithString:self.fx2TextField.text];
-    validInt = [scanner scanInt:nil];
-    if (!validInt) self.fx2TextField.text = @"";
-    validInput &= validInt;
+    validInt = [scanner scanInt:&val];
+    if (!validInt || val <= 0) self.fx2TextField.text = @"";
     
     
     // Now do the calculation, but only if the entire input was valid.
@@ -90,19 +91,23 @@
         int fx1 = [self.fx1TextField.text intValue];
         int fx2 = [self.fx2TextField.text intValue];
         
-        if (cgy1 > 0 && fx1 > 0 && fx2 > 0 && self.alphabeta > 0.0)
+        float bedCalculation = (cgy1/100.0)*(1.0+(((cgy1/100.0)/fx1)/self.alphabeta));
+        self.BEDCalculationLabel.text = [NSString stringWithFormat:@"%.0f", bedCalculation];
+        
+        // If the user put in a target fractionation, calculate the corresponding dosage.
+        if (fx2 > 0)
         {
-            float bedCalculation = (cgy1/100.0)*(1.0+(((cgy1/100.0)/fx1)/self.alphabeta));
             float cgy2Calculation = ((-fx2+sqrt((fx2*fx2)+(((4.0*fx2)/self.alphabeta)*bedCalculation)))/((2.0*fx2)/self.alphabeta))*100.0*fx2;
-            
-            self.BEDCalculationLabel.text = [NSString stringWithFormat:@"%.0f", bedCalculation];
             self.cGy2Label.text = [NSString stringWithFormat:@"%.0f", cgy2Calculation];
         }
         else
         {
-            self.BEDCalculationLabel.text = @"";
             self.cGy2Label.text = @"";
         }
+    }
+    else
+    {
+        self.BEDCalculationLabel.text = @"";
     }
 }
 
@@ -127,7 +132,7 @@
     [self.BEDButton.titleLabel.text         drawAtPoint:CGPointMake(l1, y) withFont:[UIFont boldSystemFontOfSize:20]];
     [@"="                                   drawAtPoint:CGPointMake(l2, y) withFont:[UIFont boldSystemFontOfSize:20]];
     
-    [[UIColor redColor] set];
+    [[UIColor blueColor] set];
     [self.BEDCalculationLabel.text          drawAtPoint:CGPointMake(l3, y) withFont:[UIFont boldSystemFontOfSize:20]];
 
     [[UIColor blackColor] set];
@@ -135,7 +140,7 @@
     [@"/"                                   drawAtPoint:CGPointMake(l5, y) withFont:[UIFont boldSystemFontOfSize:20]];
     [self.fx1TextField.text                 drawAtPoint:CGPointMake(l6, y) withFont:[UIFont boldSystemFontOfSize:20]];
     [@"="                                   drawAtPoint:CGPointMake(l7, y) withFont:[UIFont boldSystemFontOfSize:20]];
-    [[UIColor redColor] set];
+    [[UIColor blueColor] set];
     [self.cGy2Label.text                    drawAtPoint:CGPointMake(l8, y) withFont:[UIFont boldSystemFontOfSize:20]];
     [[UIColor blackColor] set];
     [@"/"                                   drawAtPoint:CGPointMake(l9, y) withFont:[UIFont boldSystemFontOfSize:20]];

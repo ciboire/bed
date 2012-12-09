@@ -21,6 +21,9 @@
 @synthesize index = _index;
 @synthesize tableView = _savedTableView;
 
+@synthesize equals = _equals;
+@synthesize slash = _slash;
+
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
@@ -48,6 +51,19 @@
     self.fx1Label.text = [data objectAtIndex:3];
     self.cGy2Label.text = [data objectAtIndex:4];
     self.fx2Label.text = [data objectAtIndex:5];
+    
+    // Hide the =cgy2/fx2 part if it's empty.
+    if ([self.cGy2Label.text compare:@""] == NSOrderedSame)
+    {
+        NSLog(@"Hiding equals and slash.");
+        self.equals.hidden = true;
+        self.slash.hidden = true;
+    }
+    else
+    {
+        self.equals.hidden = false;
+        self.equals.hidden = false;
+    }
 }
 
 

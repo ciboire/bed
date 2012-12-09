@@ -494,12 +494,17 @@
     [[historyItem objectAtIndex:2]          drawAtPoint:CGPointMake(l4, y) withFont:[UIFont boldSystemFontOfSize:20]];
     [@"/"                                   drawAtPoint:CGPointMake(l5, y) withFont:[UIFont boldSystemFontOfSize:20]];
     [[historyItem objectAtIndex:3]          drawAtPoint:CGPointMake(l6, y) withFont:[UIFont boldSystemFontOfSize:20]];
-    [@"="                                   drawAtPoint:CGPointMake(l7, y) withFont:[UIFont boldSystemFontOfSize:20]];
-    [[UIColor redColor] set];
-    [[historyItem objectAtIndex:4]          drawAtPoint:CGPointMake(l8, y) withFont:[UIFont boldSystemFontOfSize:20]];
-    [[UIColor blackColor] set];
-    [@"/"                                   drawAtPoint:CGPointMake(l9, y) withFont:[UIFont boldSystemFontOfSize:20]];
-    [[historyItem objectAtIndex:5]          drawAtPoint:CGPointMake(l10, y) withFont:[UIFont boldSystemFontOfSize:20]];
+    
+    // Only put the equivalence data if it's non-empty.
+    if ([ (NSString*)[historyItem objectAtIndex:4] compare:@""] != NSOrderedSame)
+    {
+        [@"="                                   drawAtPoint:CGPointMake(l7, y) withFont:[UIFont boldSystemFontOfSize:20]];
+        [[UIColor redColor] set];
+        [[historyItem objectAtIndex:4]          drawAtPoint:CGPointMake(l8, y) withFont:[UIFont boldSystemFontOfSize:20]];
+        [[UIColor blackColor] set];
+        [@"/"                                   drawAtPoint:CGPointMake(l9, y) withFont:[UIFont boldSystemFontOfSize:20]];
+        [[historyItem objectAtIndex:5]          drawAtPoint:CGPointMake(l10, y) withFont:[UIFont boldSystemFontOfSize:20]];
+    }
 }
 
 

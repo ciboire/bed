@@ -152,7 +152,7 @@
 		63FBE2651669B1B0001A27E5 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0420;
+				LastUpgradeCheck = 0450;
 				ORGANIZATIONNAME = GameHouse;
 			};
 			buildConfigurationList = 63FBE2681669B1B0001A27E5 /* Build configuration list for PBXProject "BED" */;

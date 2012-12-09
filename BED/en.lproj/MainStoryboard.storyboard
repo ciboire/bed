@@ -228,8 +228,10 @@
                                     <outlet property="BEDRatioLabel" destination="wF6-dq-Exi" id="kDD-eu-bH2"/>
                                     <outlet property="cGy1Label" destination="rer-v4-KO4" id="CfK-Ov-WmU"/>
                                     <outlet property="cGy2Label" destination="gD5-u5-HRQ" id="0ID-kc-l8C"/>
+                                    <outlet property="equals" destination="dG6-u2-h3N" id="qle-qA-7f5"/>
                                     <outlet property="fx1Label" destination="ION-53-3ap" id="kLw-Hj-v9Z"/>
                                     <outlet property="fx2Label" destination="3EC-eL-8yV" id="6HX-ft-hcF"/>
+                                    <outlet property="slash" destination="1Ge-h3-q3k" id="VfP-me-XeD"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -346,6 +348,42 @@ Here, n is the number of fractions, d is the dose / fraction, and (α/β) is the
             <point key="canvasLocation" x="665" y="422"/>
         </scene>
     </scenes>
+    <classes>
+        <class className="CalculationCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CalculationCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="BEDButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="BEDCalculationLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="cGy1TextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="cGy2Label" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="fx1TextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="fx2TextField" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="HistoryCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HistoryCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="BEDCalculationLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="BEDRatioLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="cGy1Label" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="cGy2Label" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="equals" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="fx1Label" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="fx2Label" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="slash" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="MainTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MainTableViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="BEDClicked:"/>
+                <relationship kind="action" name="save:"/>
+                <relationship kind="action" name="shareClicked:"/>
+                <relationship kind="action" name="trashClicked:"/>
+                <relationship kind="outlet" name="addButton" candidateClass="UIBarButtonItem"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

@@ -20,6 +20,9 @@
 @property (assign) int index;
 @property (assign) UITableView* tableView;
 
+@property (assign) IBOutlet UILabel* equals;
+@property (assign) IBOutlet UILabel* slash;
+
 -(void)loadDatafromArray:(NSArray*)data;
 
 
