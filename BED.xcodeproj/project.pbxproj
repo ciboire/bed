@@ -19,6 +19,7 @@
 		63FBE2911669C0CC001A27E5 /* info_icon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 63FBE2901669C0CC001A27E5 /* info_icon.jpg */; };
 		63FBE2991669C375001A27E5 /* MainTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63FBE2981669C375001A27E5 /* MainTableViewController.m */; };
 		63FBE29C1669C3B6001A27E5 /* CalculationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 63FBE29B1669C3B5001A27E5 /* CalculationCell.m */; };
+		6F6B506716746164002701A0 /* bedpic.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F6B506616746164002701A0 /* bedpic.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		63FBE2981669C375001A27E5 /* MainTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTableViewController.m; sourceTree = "<group>"; };
 		63FBE29A1669C3B5001A27E5 /* CalculationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalculationCell.h; sourceTree = "<group>"; };
 		63FBE29B1669C3B5001A27E5 /* CalculationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalculationCell.m; sourceTree = "<group>"; };
+		6F6B506616746164002701A0 /* bedpic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bedpic.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 		63FBE2631669B1B0001A27E5 = {
 			isa = PBXGroup;
 			children = (
+				6F6B506616746164002701A0 /* bedpic.png */,
 				63FBE2781669B1B0001A27E5 /* BED */,
 				63FBE2711669B1B0001A27E5 /* Frameworks */,
 				63FBE26F1669B1B0001A27E5 /* Products */,
@@ -177,6 +180,7 @@
 				63FBE27D1669B1B0001A27E5 /* InfoPlist.strings in Resources */,
 				63FBE2861669B1B0001A27E5 /* MainStoryboard.storyboard in Resources */,
 				63FBE2911669C0CC001A27E5 /* info_icon.jpg in Resources */,
+				6F6B506716746164002701A0 /* bedpic.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

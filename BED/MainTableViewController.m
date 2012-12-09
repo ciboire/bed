@@ -109,11 +109,11 @@
         if (cell == nil) {
             cell = [[CalculationCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
             c = (CalculationCell*) cell;
-            [c setAlphabeta:3.0];
+            [c setAlphabeta:10.0];
         }
-        if (c.alphabeta <= 0.0) [c setAlphabeta:3.0];
+        if (c.alphabeta <= 0.0) [c setAlphabeta:10.0];
         [c updateCalculation];
-        self.addButton.enabled = ! [c isEmpty];
+        self.addButton.enabled = ![c isEmpty];
 
     }
     else
@@ -217,7 +217,7 @@
     [textField resignFirstResponder];
     CalculationCell* c = (CalculationCell*)[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
     [c updateCalculation];
-    self.addButton.enabled = ! [c isEmpty];
+    self.addButton.enabled = ![c isEmpty];
     return YES;
 }
 
@@ -390,6 +390,15 @@
         [history insertObject:item atIndex:0];
     }
     [AppDelegate saveHistory];
+    
+    // clear calculation row
+    c.BEDCalculationLabel.text = @"";
+    c.cGy1TextField.text = @"";
+    c.fx1TextField.text = @"";
+    c.cGy2Label.text = @"";
+    c.fx2TextField.text = @"";
+    self.addButton.enabled = FALSE;
+    
     
     NSLog(@"DONE SAVE");
     [self.tableView beginUpdates];

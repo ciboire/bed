@@ -22,7 +22,20 @@
 - (void)setAlphabeta:(float)ab
 {
     _alphabeta = ab;
-    [self.BEDButton setTitle:[NSString stringWithFormat:@"BED_%3.1f", ab] forState:UIControlStateNormal];
+    long ab_int = ab;
+    bool is_integer = ab_int == ab;
+    NSString* temp = nil;
+    
+    if (is_integer)
+    {
+        temp = [NSString stringWithFormat:@"%ld", ab_int];
+    }
+    else
+    {
+        temp = [NSString stringWithFormat:@"%0.1f", ab];
+    }
+    
+    [self.BEDButton setTitle:[NSString stringWithFormat:@"BED_%@", temp] forState:UIControlStateNormal];
     [self updateCalculation];
     
 }
@@ -66,8 +79,8 @@
     }
     else
     {
-        self.BEDCalculationLabel.text = @"-";
-        self.cGy2Label.text = @"-";
+        self.BEDCalculationLabel.text = @"";
+        self.cGy2Label.text = @"";
     }
     
     
@@ -75,7 +88,7 @@
 
 -(BOOL) isEmpty
 {
-    return [self.BEDCalculationLabel.text compare:@"-"] == NSOrderedSame;
+    return [self.BEDCalculationLabel.text compare:@""] == NSOrderedSame;
 }
 
 -(void) drawForPDFAtYCoordinate:(int) y
