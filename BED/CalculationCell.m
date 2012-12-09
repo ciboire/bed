@@ -65,25 +65,45 @@
 -(void)updateCalculation
 {
     NSLog(@"UPDATE CALCULATION with A/B=%f", self.alphabeta);
-    int cgy1 = [self.cGy1TextField.text intValue];
-    int fx1 = [self.fx1TextField.text intValue];
-    int fx2 = [self.fx2TextField.text intValue];
     
-    if (cgy1 > 0 && fx1 > 0 && fx2 > 0 && self.alphabeta > 0.0)
+    // Check for valid integer inputs.  Blank out any invalid inputs we find.
+    NSScanner* scanner = [NSScanner scannerWithString:self.cGy1TextField.text];
+    bool validInt = [scanner scanInt:nil];
+    if (!validInt) self.cGy1TextField.text = @"";
+    bool validInput = validInt;
+    
+    scanner = [NSScanner scannerWithString:self.fx1TextField.text];
+    validInt = [scanner scanInt:nil];
+    if (!validInt) self.fx1TextField.text = @"";
+    validInput &= validInt;
+
+    scanner = [NSScanner scannerWithString:self.fx2TextField.text];
+    validInt = [scanner scanInt:nil];
+    if (!validInt) self.fx2TextField.text = @"";
+    validInput &= validInt;
+    
+    
+    // Now do the calculation, but only if the entire input was valid.
+    if (validInput)
     {
-        float bedCalculation = (cgy1/100.0)*(1.0+(((cgy1/100.0)/fx1)/self.alphabeta));
-        float cgy2Calculation = ((-fx2+sqrt((fx2*fx2)+(((4.0*fx2)/self.alphabeta)*bedCalculation)))/((2.0*fx2)/self.alphabeta))*100.0*fx2;
+        int cgy1 = [self.cGy1TextField.text intValue];
+        int fx1 = [self.fx1TextField.text intValue];
+        int fx2 = [self.fx2TextField.text intValue];
         
-        self.BEDCalculationLabel.text = [NSString stringWithFormat:@"%.0f", bedCalculation];
-        self.cGy2Label.text = [NSString stringWithFormat:@"%.0f", cgy2Calculation];
+        if (cgy1 > 0 && fx1 > 0 && fx2 > 0 && self.alphabeta > 0.0)
+        {
+            float bedCalculation = (cgy1/100.0)*(1.0+(((cgy1/100.0)/fx1)/self.alphabeta));
+            float cgy2Calculation = ((-fx2+sqrt((fx2*fx2)+(((4.0*fx2)/self.alphabeta)*bedCalculation)))/((2.0*fx2)/self.alphabeta))*100.0*fx2;
+            
+            self.BEDCalculationLabel.text = [NSString stringWithFormat:@"%.0f", bedCalculation];
+            self.cGy2Label.text = [NSString stringWithFormat:@"%.0f", cgy2Calculation];
+        }
+        else
+        {
+            self.BEDCalculationLabel.text = @"";
+            self.cGy2Label.text = @"";
+        }
     }
-    else
-    {
-        self.BEDCalculationLabel.text = @"";
-        self.cGy2Label.text = @"";
-    }
-    
-    
 }
 
 -(BOOL) isEmpty
