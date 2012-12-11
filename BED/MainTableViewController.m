@@ -113,6 +113,12 @@
         }
         if (c.alphabeta <= 0.0) [c setAlphabeta:10.0];
         [c updateCalculation];
+        if ([c.cGy2Label.text isEqualToString:@"cGy"]) {
+            [c.cGy2Label setTextColor:[UIColor colorWithRed:0.65 green: 0.65 blue:0.65 alpha:1.0]];
+        }
+        else {
+            [c.cGy2Label setTextColor:[UIColor colorWithRed:0 green: 0 blue:1 alpha:1.0]];
+        }
         self.addButton.enabled = ![c isEmpty];
 
     }
@@ -395,8 +401,9 @@
     c.BEDCalculationLabel.text = @"";
     c.cGy1TextField.text = @"";
     c.fx1TextField.text = @"";
-    c.cGy2Label.text = @"";
+    c.cGy2Label.text = @"cGy";
     c.fx2TextField.text = @"";
+    [c.cGy2Label setTextColor:[UIColor colorWithRed:0.65 green: 0.65 blue:0.65 alpha:1.0]];
     self.addButton.enabled = FALSE;
     
     
@@ -467,10 +474,16 @@
     [c setAlphabeta:value];
 }
 
-- (CGFloat)pickerView:(UIPickerView *)pickerView widthForComponent:(NSInteger)component
-{
-    if (component == 0) return 50;
-    else return 25;
+- (CGFloat)pickerView:(UIPickerView *)pickerView widthForComponent:(NSInteger)component {
+    switch(component) {
+            case 0: return 50;
+            case 1: return 25;
+            case 2: return 50;
+        default: return 50;
+    }
+    
+    //NOT REACHED
+    return 50;
 }
 
 -(void) drawForPDF:(NSArray*)historyItem atYCoordinate:(int) y
@@ -488,7 +501,7 @@
 
     [[historyItem objectAtIndex:0]          drawAtPoint:CGPointMake(l1, y) withFont:[UIFont boldSystemFontOfSize:20]];
     [@"="                                   drawAtPoint:CGPointMake(l2, y) withFont:[UIFont boldSystemFontOfSize:20]];
-    [[UIColor redColor] set];
+    [[UIColor blackColor] set];
     [[historyItem objectAtIndex:1]          drawAtPoint:CGPointMake(l3, y) withFont:[UIFont boldSystemFontOfSize:20]];
     [[UIColor blackColor] set];
     [[historyItem objectAtIndex:2]          drawAtPoint:CGPointMake(l4, y) withFont:[UIFont boldSystemFontOfSize:20]];
@@ -499,7 +512,7 @@
     if ([ (NSString*)[historyItem objectAtIndex:4] compare:@""] != NSOrderedSame)
     {
         [@"="                                   drawAtPoint:CGPointMake(l7, y) withFont:[UIFont boldSystemFontOfSize:20]];
-        [[UIColor redColor] set];
+        [[UIColor blackColor] set];
         [[historyItem objectAtIndex:4]          drawAtPoint:CGPointMake(l8, y) withFont:[UIFont boldSystemFontOfSize:20]];
         [[UIColor blackColor] set];
         [@"/"                                   drawAtPoint:CGPointMake(l9, y) withFont:[UIFont boldSystemFontOfSize:20]];

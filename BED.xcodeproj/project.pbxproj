@@ -20,6 +20,11 @@
 		63FBE2991669C375001A27E5 /* MainTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63FBE2981669C375001A27E5 /* MainTableViewController.m */; };
 		63FBE29C1669C3B6001A27E5 /* CalculationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 63FBE29B1669C3B5001A27E5 /* CalculationCell.m */; };
 		6F6B506716746164002701A0 /* bedpic.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F6B506616746164002701A0 /* bedpic.png */; };
+		6FA37DB716770BE100381A10 /* icon114.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FA37DB616770BE100381A10 /* icon114.png */; };
+		6FA37DBA16770BE700381A10 /* icon57.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FA37DB916770BE700381A10 /* icon57.png */; };
+		6FA37DBC167714F400381A10 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FA37DBB167714F400381A10 /* Default-568h@2x.png */; };
+		6FA37DBE167714FB00381A10 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FA37DBD167714FB00381A10 /* Default@2x.png */; };
+		6FA37DC01677176400381A10 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FA37DBF1677176400381A10 /* Default.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +48,11 @@
 		63FBE29A1669C3B5001A27E5 /* CalculationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalculationCell.h; sourceTree = "<group>"; };
 		63FBE29B1669C3B5001A27E5 /* CalculationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalculationCell.m; sourceTree = "<group>"; };
 		6F6B506616746164002701A0 /* bedpic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bedpic.png; sourceTree = "<group>"; };
+		6FA37DB616770BE100381A10 /* icon114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon114.png; sourceTree = "<group>"; };
+		6FA37DB916770BE700381A10 /* icon57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon57.png; sourceTree = "<group>"; };
+		6FA37DBB167714F400381A10 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		6FA37DBD167714FB00381A10 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		6FA37DBF1677176400381A10 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +73,11 @@
 		63FBE2631669B1B0001A27E5 = {
 			isa = PBXGroup;
 			children = (
+				6FA37DBF1677176400381A10 /* Default.png */,
+				6FA37DBD167714FB00381A10 /* Default@2x.png */,
+				6FA37DBB167714F400381A10 /* Default-568h@2x.png */,
+				6FA37DB916770BE700381A10 /* icon57.png */,
+				6FA37DB616770BE100381A10 /* icon114.png */,
 				6F6B506616746164002701A0 /* bedpic.png */,
 				63FBE2781669B1B0001A27E5 /* BED */,
 				63FBE2711669B1B0001A27E5 /* Frameworks */,
@@ -153,7 +168,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0450;
-				ORGANIZATIONNAME = GameHouse;
+				ORGANIZATIONNAME = "Vega Physics";
 			};
 			buildConfigurationList = 63FBE2681669B1B0001A27E5 /* Build configuration list for PBXProject "BED" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -181,6 +196,11 @@
 				63FBE2861669B1B0001A27E5 /* MainStoryboard.storyboard in Resources */,
 				63FBE2911669C0CC001A27E5 /* info_icon.jpg in Resources */,
 				6F6B506716746164002701A0 /* bedpic.png in Resources */,
+				6FA37DB716770BE100381A10 /* icon114.png in Resources */,
+				6FA37DBA16770BE700381A10 /* icon57.png in Resources */,
+				6FA37DBC167714F400381A10 /* Default-568h@2x.png in Resources */,
+				6FA37DBE167714FB00381A10 /* Default@2x.png in Resources */,
+				6FA37DC01677176400381A10 /* Default.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

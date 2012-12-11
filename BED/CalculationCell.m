@@ -93,16 +93,19 @@
         
         float bedCalculation = (cgy1/100.0)*(1.0+(((cgy1/100.0)/fx1)/self.alphabeta));
         self.BEDCalculationLabel.text = [NSString stringWithFormat:@"%.0f", bedCalculation];
+        [self.BEDCalculationLabel setTextColor:[UIColor colorWithRed:0.0 green:0.431 blue:0.478 alpha:1.0]];
         
         // If the user put in a target fractionation, calculate the corresponding dosage.
         if (fx2 > 0)
         {
             float cgy2Calculation = ((-fx2+sqrt((fx2*fx2)+(((4.0*fx2)/self.alphabeta)*bedCalculation)))/((2.0*fx2)/self.alphabeta))*100.0*fx2;
             self.cGy2Label.text = [NSString stringWithFormat:@"%.0f", cgy2Calculation];
+            
+            [self.cGy2Label setTextColor:[UIColor colorWithRed:0.0 green:0.431 blue:0.478 alpha:1.0]];
         }
         else
         {
-            self.cGy2Label.text = @"";
+            self.cGy2Label.text = @"cGy";
         }
     }
     else
@@ -132,7 +135,7 @@
     [self.BEDButton.titleLabel.text         drawAtPoint:CGPointMake(l1, y) withFont:[UIFont boldSystemFontOfSize:20]];
     [@"="                                   drawAtPoint:CGPointMake(l2, y) withFont:[UIFont boldSystemFontOfSize:20]];
     
-    [[UIColor blueColor] set];
+    [[UIColor colorWithRed:0.0 green:0.431 blue:0.478 alpha:1.0] set];
     [self.BEDCalculationLabel.text          drawAtPoint:CGPointMake(l3, y) withFont:[UIFont boldSystemFontOfSize:20]];
 
     [[UIColor blackColor] set];
@@ -140,7 +143,7 @@
     [@"/"                                   drawAtPoint:CGPointMake(l5, y) withFont:[UIFont boldSystemFontOfSize:20]];
     [self.fx1TextField.text                 drawAtPoint:CGPointMake(l6, y) withFont:[UIFont boldSystemFontOfSize:20]];
     [@"="                                   drawAtPoint:CGPointMake(l7, y) withFont:[UIFont boldSystemFontOfSize:20]];
-    [[UIColor blueColor] set];
+    [[UIColor colorWithRed:0.0 green:0.431 blue:0.478 alpha:1.0] set];
     [self.cGy2Label.text                    drawAtPoint:CGPointMake(l8, y) withFont:[UIFont boldSystemFontOfSize:20]];
     [[UIColor blackColor] set];
     [@"/"                                   drawAtPoint:CGPointMake(l9, y) withFont:[UIFont boldSystemFontOfSize:20]];
