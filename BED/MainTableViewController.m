@@ -216,6 +216,13 @@
     CGRect pickerRect = pickerView.frame;
     pickerRect.origin.y = orgHeight;
     pickerView.frame = pickerRect;
+    
+    CalculationCell* c = (CalculationCell*)[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+    int wholePart = (int)c.alphabeta;
+    int decimalPart = (int)((c.alphabeta - wholePart) * 10.0);
+    
+    [pickerView selectRow:wholePart inComponent:0 animated:NO];
+    [pickerView selectRow:decimalPart inComponent:2 animated:NO];
 }
 
 -(BOOL) textFieldShouldReturn:(UITextField *)textField
