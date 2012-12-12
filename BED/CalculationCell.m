@@ -68,20 +68,23 @@
     
     // Check for valid integer inputs.  Blank out any invalid inputs we find.
     // Note that FX2 is allowed to be blank.
-    NSScanner* scanner = [NSScanner scannerWithString:self.cGy1TextField.text];
-    int val = 0;
-    bool validInt = [scanner scanInt:&val];
-    if (!validInt || val <= 0) self.cGy1TextField.text = @"";
+    int val = [CalculationCell parseInt:self.cGy1TextField.text];
+    NSLog(@"Read int value: %d", val);
+    bool validInt = val > 0;
+    if (!validInt) self.cGy1TextField.text = @"";
+    else self.cGy1TextField.text = [NSString stringWithFormat:@"%d", val];
     bool validInput = validInt && val > 0;
     
-    scanner = [NSScanner scannerWithString:self.fx1TextField.text];
-    validInt = [scanner scanInt:&val];
-    if (!validInt || val <= 0) self.fx1TextField.text = @"";
+    val = [CalculationCell parseInt:self.fx1TextField.text];
+    validInt = val > 0;
+    if (!validInt) self.fx1TextField.text = @"";
+    else self.fx1TextField.text = [NSString stringWithFormat:@"%d", val];
     validInput &= validInt && val > 0;
 
-    scanner = [NSScanner scannerWithString:self.fx2TextField.text];
-    validInt = [scanner scanInt:&val];
-    if (!validInt || val <= 0) self.fx2TextField.text = @"";
+    val = [CalculationCell parseInt:self.fx2TextField.text];
+    validInt = val > 0;
+    if (!validInt) self.fx2TextField.text = @"";
+    else self.fx2TextField.text = [NSString stringWithFormat:@"%d", val];
     
     
     // Now do the calculation, but only if the entire input was valid.
@@ -148,6 +151,27 @@
     [[UIColor blackColor] set];
     [@"/"                                   drawAtPoint:CGPointMake(l9, y) withFont:[UIFont boldSystemFontOfSize:20]];
     [self.fx2TextField.text                 drawAtPoint:CGPointMake(l10, y) withFont:[UIFont boldSystemFontOfSize:20]];
+}
+
++(int) parseInt:(NSString *)str
+{
+    NSNumberFormatter *nf = [[NSNumberFormatter alloc] init];
+    [nf setAllowsFloats:YES];
+    [nf setMaximum:[NSNumber numberWithInt:INT_MAX]];
+    [nf setMinimum:[NSNumber numberWithInt:INT_MIN]];
+    [nf setRoundingMode:NSNumberFormatterRoundHalfUp];
+    [nf setPositiveFormat:@"0.0d"];
+    
+    @try {
+        NSNumber *num = [nf numberFromString:str];
+        NSLog(@"Raw number: %@", num);
+        if (!num) return 0;
+        else return (int)([num floatValue] + 0.5);
+    }
+    @catch (NSException * e) {
+        NSLog(@"Bad number format.");
+        return 0;
+    }
 }
 
 

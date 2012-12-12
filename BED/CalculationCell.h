@@ -30,4 +30,6 @@
 
 -(BOOL) isEmpty;
 
++(int) parseInt:(NSString *)str;
+
 @end
