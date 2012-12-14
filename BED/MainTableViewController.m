@@ -16,6 +16,8 @@
 
 @synthesize addButton = _addButton;
 
+static float ROTATION_SCALE_FACTOR = 1.7;
+
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
@@ -78,7 +80,24 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     // Return YES for supported orientations
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+    //return (interfaceOrientation == UIInterfaceOrientationPortrait);
+    return YES;
+}
+
+- (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
+{
+    if ( (UIInterfaceOrientationIsLandscape(toInterfaceOrientation) && !UIInterfaceOrientationIsLandscape(self.interfaceOrientation)) ||
+         (UIInterfaceOrientationIsPortrait(toInterfaceOrientation) && !UIInterfaceOrientationIsPortrait(self.interfaceOrientation)) )
+    {
+        CGFloat s = UIInterfaceOrientationIsLandscape(toInterfaceOrientation) ? ROTATION_SCALE_FACTOR : 1.0/ROTATION_SCALE_FACTOR;
+        CGAffineTransform tr = CGAffineTransformScale(self.view.transform, s, s);
+        CGFloat h = self.view.frame.size.height;
+        CGFloat w = self.view.frame.size.width;
+        [UIView animateWithDuration:duration delay:0 options:0 animations:^{
+            self.view.transform = tr;
+            self.view.center = CGPointMake(w-w*s/2,h*s/2);
+        } completion:^(BOOL finished) {}];
+    }
 }
 
 #pragma mark - Table view data source
