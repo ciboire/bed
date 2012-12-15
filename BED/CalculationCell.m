@@ -96,7 +96,8 @@
         
         float bedCalculation = (cgy1/100.0)*(1.0+(((cgy1/100.0)/fx1)/self.alphabeta));
         self.BEDCalculationLabel.text = [NSString stringWithFormat:@"%.0f", bedCalculation];
-        [self.BEDCalculationLabel setTextColor:[UIColor colorWithRed:0.0 green:0.431 blue:0.478 alpha:1.0]];
+        //[self.BEDCalculationLabel setTextColor:[UIColor colorWithRed:0.0 green:0.431 blue:0.478 alpha:1.0]];
+        [self.BEDCalculationLabel setTextColor:[UIColor colorWithRed:14.0/255.0 green:111.0/255.0 blue:130.0/255.0 alpha:1.0]];
         
         // If the user put in a target fractionation, calculate the corresponding dosage.
         if (fx2 > 0)
@@ -104,7 +105,7 @@
             float cgy2Calculation = ((-fx2+sqrt((fx2*fx2)+(((4.0*fx2)/self.alphabeta)*bedCalculation)))/((2.0*fx2)/self.alphabeta))*100.0*fx2;
             self.cGy2Label.text = [NSString stringWithFormat:@"%.0f", cgy2Calculation];
             
-            [self.cGy2Label setTextColor:[UIColor colorWithRed:0.0 green:0.431 blue:0.478 alpha:1.0]];
+            [self.cGy2Label setTextColor:[UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:1.0]];
         }
         else
         {

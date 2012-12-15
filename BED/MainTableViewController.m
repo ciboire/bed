@@ -16,7 +16,7 @@
 
 @synthesize addButton = _addButton;
 
-static float ROTATION_SCALE_FACTOR = 1.7;
+static float ROTATION_SCALE_FACTOR = 1.5;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -496,6 +496,9 @@ static float ROTATION_SCALE_FACTOR = 1.7;
 -(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
 {
     float value = [pickerView selectedRowInComponent:0] + ([pickerView selectedRowInComponent:2] / 10.0);
+    if (value == 0.0) {
+        value = 0.1;
+    }
     NSLog(@"PICKER VALUE: %f", value);
     CalculationCell* c = (CalculationCell*) [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
     [c setAlphabeta:value];
