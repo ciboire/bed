@@ -139,19 +139,24 @@
     [self.BEDButton.titleLabel.text         drawAtPoint:CGPointMake(l1, y) withFont:[UIFont boldSystemFontOfSize:20]];
     [@"="                                   drawAtPoint:CGPointMake(l2, y) withFont:[UIFont boldSystemFontOfSize:20]];
     
-    [[UIColor colorWithRed:0.0 green:0.431 blue:0.478 alpha:1.0] set];
+    [[UIColor blackColor] set];
     [self.BEDCalculationLabel.text          drawAtPoint:CGPointMake(l3, y) withFont:[UIFont boldSystemFontOfSize:20]];
 
     [[UIColor blackColor] set];
     [self.cGy1TextField.text                drawAtPoint:CGPointMake(l4, y) withFont:[UIFont boldSystemFontOfSize:20]];
     [@"/"                                   drawAtPoint:CGPointMake(l5, y) withFont:[UIFont boldSystemFontOfSize:20]];
     [self.fx1TextField.text                 drawAtPoint:CGPointMake(l6, y) withFont:[UIFont boldSystemFontOfSize:20]];
-    [@"="                                   drawAtPoint:CGPointMake(l7, y) withFont:[UIFont boldSystemFontOfSize:20]];
-    [[UIColor colorWithRed:0.0 green:0.431 blue:0.478 alpha:1.0] set];
-    [self.cGy2Label.text                    drawAtPoint:CGPointMake(l8, y) withFont:[UIFont boldSystemFontOfSize:20]];
-    [[UIColor blackColor] set];
-    [@"/"                                   drawAtPoint:CGPointMake(l9, y) withFont:[UIFont boldSystemFontOfSize:20]];
-    [self.fx2TextField.text                 drawAtPoint:CGPointMake(l10, y) withFont:[UIFont boldSystemFontOfSize:20]];
+    
+    // Only put the equivalence data if it's non-empty.
+    if ([self.fx2TextField.text compare:@""] != NSOrderedSame)
+    {
+        [@"="                                   drawAtPoint:CGPointMake(l7, y) withFont:[UIFont boldSystemFontOfSize:20]];
+        [[UIColor blackColor] set];
+        [self.cGy2Label.text                    drawAtPoint:CGPointMake(l8, y) withFont:[UIFont boldSystemFontOfSize:20]];
+        [[UIColor blackColor] set];
+        [@"/"                                   drawAtPoint:CGPointMake(l9, y) withFont:[UIFont boldSystemFontOfSize:20]];
+        [self.fx2TextField.text                 drawAtPoint:CGPointMake(l10, y) withFont:[UIFont boldSystemFontOfSize:20]];
+    }
 }
 
 +(int) parseInt:(NSString *)str

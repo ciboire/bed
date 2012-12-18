@@ -353,7 +353,7 @@ static float ROTATION_SCALE_FACTOR = 1.5;
         // Now fire up the mail, with the PDF as a built-in attachment.
         MFMailComposeViewController* controller = [[MFMailComposeViewController alloc] init];
         controller.mailComposeDelegate = self;
-        [controller setSubject:@"Recent BED Calculation History"];
+        [controller setSubject:@"BED Calculations"];
         [controller setMessageBody:@"" isHTML:NO]; 
         [controller addAttachmentData:pdfData mimeType:@"application/pdf" fileName:@"BED_Calculation_History.pdf"];
         if (controller) [self presentModalViewController:controller animated:YES];
@@ -539,7 +539,7 @@ static float ROTATION_SCALE_FACTOR = 1.5;
     [[historyItem objectAtIndex:3]          drawAtPoint:CGPointMake(l6, y) withFont:[UIFont boldSystemFontOfSize:20]];
     
     // Only put the equivalence data if it's non-empty.
-    if ([ (NSString*)[historyItem objectAtIndex:4] compare:@""] != NSOrderedSame)
+    if ([ (NSString*)[historyItem objectAtIndex:5] compare:@""] != NSOrderedSame)
     {
         [@"="                                   drawAtPoint:CGPointMake(l7, y) withFont:[UIFont boldSystemFontOfSize:20]];
         [[UIColor blackColor] set];

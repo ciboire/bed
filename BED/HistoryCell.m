@@ -53,16 +53,18 @@
     self.fx2Label.text = [data objectAtIndex:5];
     
     // Hide the =cgy2/fx2 part if it's empty.
-    if ([self.cGy2Label.text compare:@""] == NSOrderedSame)
+    if ([self.fx2Label.text compare:@""] == NSOrderedSame)
     {
-        NSLog(@"Hiding equals and slash.");
+        NSLog(@"Hiding equals, cGy2 and slash.");
         self.equals.hidden = true;
         self.slash.hidden = true;
+        self.cGy2Label.hidden = true;
     }
     else
     {
         self.equals.hidden = false;
-        self.equals.hidden = false;
+        self.slash.hidden = false;
+        self.cGy2Label.hidden = false;
     }
 }
 
